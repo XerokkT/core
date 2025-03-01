@@ -7,7 +7,7 @@ def course_list(request):
 
     return render(request, "A/course_list.html", {"courses":courses})
 
-def course_list(request):
+def course_search(request):
     query = request.GET.get('q', '')
     
     if query:
@@ -15,4 +15,4 @@ def course_list(request):
     else:
         courses = Course.objects.all()
 
-    return render(request, "A/course_list.html", {"courses": courses, "query": query})
+    return render(request, "A/course_search.html", {"courses": courses, "query": query})

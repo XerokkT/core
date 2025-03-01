@@ -1,27 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <title>ค้นหารายวิชา</title>
-</head>
-<body>
-    <h1>ค้นหารายวิชา</h1>
-
-    <form method="get" action="">
-        <input type="text" name="q" value="{{ query }}" placeholder="กรอกรหัสวิชา">
-        <button type="submit">ค้นหา</button>
-    </form>
-    
-    <hr>
-    
-    <ul>
-        {% for course in courses %}
+    <head>
+        <meta charset="UTF-8" />
+        <title>รายวิชาในหลักสูตร</title>
+    </head>
+    <body>
+        <h1>รายวิชาในหลักสูตร</h1>
+        <ul>
+            {% for course in courses %}
             <li>
-                <strong>{{ course.code }}</strong> - {{ course.name }}
+                <strong>{{ course.code }}: {{ course.name }}</strong>
             </li>
-        {% empty %}
-            <li>ไม่พบรายวิชา</li>
-        {% endfor %}
-    </ul>
-</body>
+            {% empty %}
+            <li>ไม่มีข้อมูลรายวิชา</li>
+            {% endfor %}
+        </ul>
+    </body>
 </html>
