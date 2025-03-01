@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ลบรายวิชา</title>
+</head>
+<body>
+    <h1>ลบรายวิชา</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <div>
+            <label for="code">กรอกรหัสวิชา:</label>
+            <input type="text" id="code" name="code" required>
+        </div>
+        <button type="submit">ลบรายวิชา</button>
+    </form>
+</body>
+</html>

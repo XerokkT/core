@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>แก้ไขข้อมูลรายวิชา</title>
+</head>
+<body>
+    <h1>แก้ไขข้อมูลรายวิชา</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div>
+            <label for="code">รหัสวิชา:</label>
+            <input type="text" id="code" name="code" value="{{ course.code }}" required>
+        </div>
+        <div>
+            <label for="name">ชื่อวิชา:</label>
+            <input type="text" id="name" name="name" value="{{ course.name }}" required>
+        </div>
+        <button type="submit">บันทึกการแก้ไข</button>
+    </form>
+</body>
+</html>
