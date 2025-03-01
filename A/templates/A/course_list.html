@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <title>รายวิชาในหลักสูตร</title>
+    </head>
+    <body>
+        <h1>รายวิชาในหลักสูตร</h1>
+        <ul>
+            {% for course in courses %}
+            <li>
+                <strong>{{ course.code }}: {{ course.name }}</strong>
+            </li>
+            {% empty %}
+            <li>ไม่มีข้อมูลรายวิชา</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
